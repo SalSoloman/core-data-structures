@@ -3,16 +3,17 @@
 export default class PriorityQueue{
   constructor(){
     this.queue = []
+    //this.index = 0
   }
 
   enqueue(name, priority){
-    this.queue.push({name, priority})
-    console.log(this.queue)
-    this.queue.sort(function(a,b){
+    this.queue[this.queue.length] = {name, priority}
+    var x = this.queue.sort(function(a,b){
       //a through b not a - b thank you trevor
       //parseFloat turns a string into an interger
-      return parseFloat(a.priority) - parseFloat(b.priority);
+      return parseFloat(b.priority) - parseFloat(a.priority);
     });
+    return x
   }
 
 
