@@ -10,11 +10,16 @@ export default class Stack {
   }
 
   remove(){
-    this.arr.pop()
+    return this.arr.pop()
   }
 
   peek() {
-    this.arr.length > 0 ? this.arr[this.arrlength-1]: null
+    return this.arr.length > 0 ? this.arr[this.arr.length-1]: null
+    // if(this.arr.length > 0){
+    //   return this.arr[this.arr.length-1]
+    // } else {
+    //   return null
+    // }
   }
 
   isEmpty(){

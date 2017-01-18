@@ -31,12 +31,34 @@ describe('Stack', () => {
   })
 
   context('peek()', () => {
-    it('returns the top element of the stack.', () => {
+    it('shows the top element of the stack.', () => {
+      const myStack = new Stack()
+      // myStack.add('foo')
+      // myStack.add('dude')
+      // myStack.add('adam')
+      console.log(myStack)
+      console.log('this is cool ', myStack.peek())
+      expect(myStack.peek()).to.eql(null)
+    })
+  })
+
+  context('isEmpty()', () => {
+    it('checks if the stack is empty or not.', () => {
       const myStack = new Stack()
       myStack.add('foo')
       myStack.add('dude')
       myStack.add('adam')
-      expect(() => myStack.peek().to.be.equal('adam'))
+      expect(myStack.isEmpty()).to.equal(false)
+    })
+  })
+
+  context('size()', () => {
+    it('returns the number of elements in the stack.', () => {
+      const myStack = new Stack()
+      myStack.add('foo')
+      myStack.add('dude')
+      myStack.add('adam')
+      expect(myStack.size()).to.equal(3)
     })
   })
 })
