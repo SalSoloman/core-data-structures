@@ -5,18 +5,16 @@ export default class Stack {
     this.arr = []
   }
 
-    add(element) {
-      return this.arr.push(element)
-    }
+  add(element) {
+    return this.arr.push(element)
+  }
 
-    remove(){
-      this.arr.pop()
-    }
+  remove(){
+    this.arr.pop()
+  }
 
-    peek() {
-      this.arr.length > 0 ? this.arr[this.arrlength-1]: null
-
-    }
+  peek() {
+    this.arr.length > 0 ? this.arr[this.arrlength-1]: null
   }
 
   isEmpty(){
