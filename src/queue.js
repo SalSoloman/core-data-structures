@@ -3,27 +3,26 @@
 export default class Queue {
   constructor(){
     this.queue = []
-    this.index = 0;
   }
 
   enqueue(element){
-    return this.queue.push(element)
+    return this.queue[this.queue.length] = element
   }
 
   dequeue(){
-    return this.queue.length > 0 ? this.queue.shift(this.queue[this.index]): null
+    return this.queue.length > 0 ? this.queue.shift(this.queue[0]): null
   }
 
   front(){
-    return this.queue.length > 0 ? this.queue[this.index]: null
+    return this.queue.length > 0 ? this.queue[0]: null
   }
 
   back(){
-    return
+    return this.queue.length > 0 ? this.queue[this.queue.length-1]: null
   }
 
   isEmpty(){
-    return
+    return this.queue.length <= 0
   }
 
   length(){
