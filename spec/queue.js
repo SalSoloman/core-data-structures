@@ -6,7 +6,7 @@ chai.use(chaiChange)
 
 describe('Queue', () => {
   'use strict'
-
+  
   it('exists', () => {
     expect(Queue).to.be.a('function')
   })
