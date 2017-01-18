@@ -43,7 +43,7 @@ describe('Stack', () => {
   })
 
   context('isEmpty()', () => {
-    it('checks if the stack is empty or not.', () => {
+    it('returns true if the stack is empty or false if not.', () => {
       const myStack = new Stack()
       myStack.add('foo')
       myStack.add('dude')
