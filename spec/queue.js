@@ -14,8 +14,11 @@ describe('Queue', () => {
   context('enqueue()', () => {
     it('adds an element (the string "foo") to the back of the queue.', () => {
       const myQueue = new Queue()
-      // console.log(myQueue)
-      expect(myQueue.enqueue('foo')).to.be.eql('foo')
+      myQueue.enqueue('dude')
+      myQueue.enqueue('talk')
+      myQueue.enqueue('cool')
+      console.log(myQueue)
+    expect(myQueue.enqueue('foo')).to.eql('foo')
     })
   })
 
@@ -28,20 +31,61 @@ describe('Queue', () => {
       myQueue.enqueue('dude')
       expect(() => myQueue.dequeue())
         .to.alter(() => myQueue.length(), { from: 3, to: 2 })
-    })
-  })
 
-  context('dequeue()', () => {
-    it('testing to see if the first element in the queue is removed and returned', () => {
+      it('testing to see if the first element in the queue is removed and returned', () => {
       const myQueue = new Queue()
 
       myQueue.enqueue('foo')
       myQueue.enqueue('too')
       myQueue.enqueue('dude')
-      console.log(Queue);
-      console.log(myQueue.dequeue())
-      console.log(Queue);
       expect(myQueue.dequeue()).to.eql('foo')
     })
   })
 })
+
+  context('front()', () => {
+    it('returns the front element in queue or null if the queue is empty.', () => {
+      const myQueue = new Queue()
+
+      myQueue.enqueue('foo')
+      myQueue.enqueue('too')
+      myQueue.enqueue('dude')
+      expect(myQueue.front()).to.eql('foo')
+    })
+  })
+})
+
+  context('back()', () => {
+    it('returns the back element in queue or null if the queue is empty.', () => {
+      const myQueue = new Queue()
+
+      myQueue.enqueue('foo')
+      myQueue.enqueue('too')
+      myQueue.enqueue('dude')
+      expect(myQueue.back()).to.eql('dude')
+    })
+  })
+
+  context('isEmpty()', () => {
+    it('returns true if queue is empty.', () => {
+      const myQueue = new Queue()
+      expect(myQueue.isEmpty()).to.equal(true)
+  })
+    it('returns null if queue is empty.', () => {
+    const myQueue = new Queue()
+    myQueue.enqueue('this')
+    myQueue.enqueue('is')
+    myQueue.enqueue('foo')
+    expect(myQueue.isEmpty()).to.equal(false)
+  })
+})
+
+  context('length()', () => {
+    it('returns the number of elements in the queue.', () => {
+      const myQueue = new Queue()
+      myQueue.enqueue('foo')
+      myQueue.enqueue('dude')
+      myQueue.enqueue('adam')
+      expect(myQueue.length()).to.equal(3)
+    })
+  })
