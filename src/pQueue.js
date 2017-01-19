@@ -18,6 +18,7 @@ export default class PriorityQueue{
 
 
   front(){
+    return this.queue > 0 ? this.queue[0]: null;
     return this.queue[0] !== undefined ? this.queue[0] : null
   }
 
