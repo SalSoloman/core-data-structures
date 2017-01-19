@@ -12,28 +12,28 @@ export default class PriorityQueue{
       //a through b not a - b thank you trevor
       //parseFloat turns a string into an interger
       return parseFloat(b.priority) - parseFloat(a.priority);
-    });
+    })
     return x
   }
 
 
   front(){
-    return
+    return this.queue[0] !== undefined ? this.queue[0] : null
   }
 
   back(){
-    return
+    return this.queue.length > 0 ? this.queue[this.queue.length - 1] : null
   }
 
   dequeue(){
-    return
+    return this.queue.length > 0 ? this.queue.shift(this.queue[0]) : null
   }
 
   isEmpty(){
-    return
+    return this.queue.length > 0 ? false : true
   }
 
   length(){
-    return
+    return this.queue.length
   }
 }
