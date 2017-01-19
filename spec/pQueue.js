@@ -22,5 +22,3 @@ describe('PriorityQueue', () => {
     })
   })
 })
-
-//[{data: 'pizza', priority: 100},{data: 'burger', priority: 90},{data: 'taco', priority: 80}]
