@@ -44,4 +44,86 @@ describe('Set', () => {
       expect(set.contains(60)).to.equal(false)
     })
   })
-})
+
+  context('remove()', () => {
+    it('removes an element (if it exists) from the set.', () => {
+      const set = new Set()
+      set.add('a')
+      set.add('b')
+      set.add('c')
+      expect(set.remove('a')).deep.equal(['b','c'])
+    })
+  })
+
+  context('forEveryElement()', () =>{
+    it('takes a callback function and passes it each element in sequence.', () => {
+      const set = new Set()
+      set.add('a')
+      set.add('b')
+      set.add('c')
+      expect(set.forEveryElement(console.log(set))).to.equal(undefined)
+      })
+    })
+
+    context('size()', () =>{
+      it('returns the number of elements in the set.', () => {
+        const set = new Set()
+        set.add('a')
+        set.add('b')
+        set.add('c')
+        expect(set.size()).to.equal(3)
+        })
+      })
+
+    context('union()', () =>{
+      it('unions the set with another set and returns the resulting set.', () => {
+        const set = new Set()
+        set.add('a')
+        set.add('b')
+        set.add('c')
+        expect(set.union(['b','d','e'])).to.eql(['a','b','c','d','e'])
+        })
+      })
+
+    context('intersect()', () =>{
+      it('intersects the set with another set and returns the resulting set', () => {
+        const set = new Set()
+        set.add('a')
+        set.add('b')
+        set.add('c')
+        expect(set.intersect(['b','d','e'])).to.eql(['b'])
+        })
+      })
+
+    context('difference()', () =>{
+      it('returns a set that contains the elements found in the set but not in otherSet.', () => {
+        const set = new Set()
+        set.add('a')
+        set.add('b')
+        set.add('c')
+        expect(set.difference(['b','d','e'])).to.eql(['d','e'])
+        })
+      })
+
+    context('subSet()', () =>{
+      it('returns true if the set is a subset of otherSet or false if not.', () => {
+        const set = new Set()
+        set.add('a')
+        set.add('b')
+        set.add('c')
+        set.add('d')
+        set.add('e')
+        expect(set.subSet(['b','d','e'])).to.eql(true)
+        })
+      })
+
+    context('clone()', () =>{
+      it('returns a cloned set.', () => {
+        const set = new Set()
+        set.add('a')
+        set.add('b')
+        set.add('c')
+        expect(set.clone()).to.eql(['a','b','c'])
+        })
+      })
+    })
