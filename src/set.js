@@ -53,6 +53,7 @@ export default class Set{
     let intersect = [];
     this.arr.forEach(function(element){
       if(otherSet.indexOf(element) >= 0)
+        if(intersect.indexOf(element) >=0)
       intersect.push(element)
     })
     return intersect
@@ -79,4 +80,5 @@ export default class Set{
   clone(){
     let test = this.arr.slice()
     return test
+  }
 }
