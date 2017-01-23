@@ -90,6 +90,7 @@ describe('Set', () => {
         const set = new Set()
         set.add('a')
         set.add('b')
+        set.add('b')
         set.add('c')
         expect(set.intersect(['b','d','e'])).to.eql(['b'])
         })
